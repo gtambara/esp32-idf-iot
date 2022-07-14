@@ -1,32 +1,9 @@
-# _Sample project_
+#  Simple PWM control test
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+There is a variety of ways to light up a LED, but with ESP32 there is a possibility to control it's intensity with the PWM method. You can do it as a pure software solution with simple digital gpios but the result is limited. The most effective way is to use the hardware solution since ESP32 has one driver embedded just for it. In this simple code, i practice some simple ways to that and learn about esp32 programming with the espressif framework.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+## How to test projects
 
+I usually use the espressif addon  for Visual Studio Code. All you have to do is build the c files in the main folder. Chose one file, then do [build], [flash] and [monitor]. Alternatively you can do in the espressif cmd (PORT could be COM6, for example):
 
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+> idf.py -p build flash monitor PORT
