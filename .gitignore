@@ -1,0 +1,4 @@
+# git untracked files and archives
+.devcontainer/
+.vscode/
+build/
